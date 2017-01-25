@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-navbar side="center">
+    <ion-title>{{title}}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content align="center" padding-left="10px" padding-right="10px">
+  <div >
+    <ion-label>
+      <h1>
+        Welcome
+      </h1>
+      <h4>
+        {{username}}
+      </h4>
+    </ion-label>
+  </div>
+
+  <div style="margin-top: 30%; margin-bottom: 30%;">
+    <button ion-button color="secondary" full [navPush]="siteCheckPage"> Ref Check in </button>
+  </div>
+  <div style="margin-bottom: 8%;">
+    <button ion-button color="secondary" full [navPush]="siteFeedbackPage"> Provide Feedback </button>
+  </div>
+</ion-content>

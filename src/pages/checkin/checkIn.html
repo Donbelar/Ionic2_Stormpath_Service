@@ -1,0 +1,84 @@
+
+<ion-header>
+  <ion-navbar side="center">
+    <ion-title>{{title}}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content align="center" padding-left="10px" padding-right="10px">
+
+    <div style="float: left;">
+      <ion-label><strong>Site:</strong> {{selectedSite}}</ion-label>
+    </div>
+    <div>
+      <ion-label><strong>Game:</strong> {{selectedGame}}</ion-label>
+    </div>
+
+  <!--button ion-button color="secondary">Ref 1</button-->
+
+
+  <!-- Segment in content -->
+  <div margin-bottom="10px;">
+    <ion-segment [(ngModel)]="referee">
+      <ion-segment-button value="referee1">
+        Ref 1
+      </ion-segment-button>
+      <ion-segment-button value="referee2">
+        Ref 2
+      </ion-segment-button>
+    </ion-segment>
+  </div>
+
+  <div [ngSwitch]="referee">
+    <ion-list *ngSwitchCase="'referee1'">
+
+      <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>
+      <ion-list>
+        <ion-item *ngFor="let item of items">
+          {{ item }}
+        </ion-item>
+      </ion-list>
+
+      <ion-list>
+        <ion-item>
+          <ion-input type="text" value="" placeholder="First Name"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-input type="text" value="" placeholder="Last Name"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-input type="email" value="" placeholder="Email Address"></ion-input>
+        </ion-item>
+
+      </ion-list>
+
+    </ion-list>
+
+    <ion-list *ngSwitchCase="'referee2'">
+
+      <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>
+      <ion-list>
+        <ion-item *ngFor="let item of items">
+          {{ item }}
+        </ion-item>
+      </ion-list>
+
+      <ion-list>
+        <ion-item>
+          <ion-input type="text" value="" placeholder="First Name"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-input type="text" value="" placeholder="Last Name"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-input type="email" value="" placeholder="Email Address"></ion-input>
+        </ion-item>
+      </ion-list>
+
+    </ion-list>
+  </div>
+
+
+  <button ion-button color="default" full>Check In</button>
+
+</ion-content>

@@ -1,0 +1,67 @@
+
+<ion-header>
+  <ion-navbar side="center">
+    <ion-title>{{title}}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content align="center" padding-left="10px" padding-right="10px">
+
+  <!-- Segment in content -->
+  <div margin-bottom="10px;" margin-top="10px;">
+    <ion-segment [(ngModel)]="referee">
+      <ion-segment-button value="referee1">
+        Referee1
+      </ion-segment-button>
+      <ion-segment-button value="referee2">
+        Referee2
+      </ion-segment-button>
+    </ion-segment>
+  </div>
+
+  <div [ngSwitch]="referee">
+    <ion-list *ngSwitchCase="'referee1'">
+      <div class="row">
+        <div class="col col-10">
+          <ion-label><h4>Rating</h4></ion-label>
+        </div>
+        <div class="col-80">
+          <rating [(ngModel)]="rate1"></rating>
+        </div>
+      </div>
+      <div align="left">
+        <strong><h5>Referee Feedback:</h5></strong>
+      </div>
+      <ion-item>
+        <ion-textarea name="referee1_feedback" rows="6" placeholder="Please enter your feedback here..." full></ion-textarea>
+      </ion-item>
+
+    </ion-list>
+
+    <ion-list *ngSwitchCase="'referee2'">
+      <div class="row">
+        <div class="col">
+          <ion-label><h4>Rating</h4></ion-label>
+        </div>
+        <div class="col">
+          <rating [(ngModel)]="rate2"></rating>
+        </div>
+      </div>
+      <div align="left">
+        <strong><h5>Referee Feedback:</h5></strong>
+      </div>
+      <ion-item>
+        <ion-textarea name="referee2_feedback" rows="6" placeholder="Please enter your feedback here..."></ion-textarea>
+      </ion-item>
+
+    </ion-list>
+  </div>
+
+  <button ion-button color="default" full>Submit</button>
+
+</ion-content>
+
+<!--ion-nav-buttons side="left" class="has-header">
+  <button class="button button-icon icon ion-ios-arrow-back"> Site-Check</button>
+</ion-nav-buttons-->
+

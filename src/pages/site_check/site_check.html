@@ -1,0 +1,51 @@
+<ion-header>
+  <ion-navbar side="center">
+    <ion-title>{{title}}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content align="center" padding-left="10px" padding-right="10px">
+
+  <button ion-button color="default" full>Sites</button>
+
+  <ion-list radio-group>
+    <!--ion-list-header></ion-list-header-->
+
+    <ion-item>
+      <ion-label>Site 1</ion-label>
+      <ion-radio value="site1"></ion-radio>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Site 2</ion-label>
+      <ion-radio value="site2"></ion-radio>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Site 3</ion-label>
+      <ion-radio value="site3"></ion-radio>
+    </ion-item>
+    <ion-item>
+      <ion-label>Site 4</ion-label>
+      <ion-radio value="site4"></ion-radio>
+    </ion-item>
+  </ion-list>
+
+
+    <ion-item>
+      <ion-label>Gaming</ion-label>
+      <ion-select [(ngModel)]="gaming">
+        <ion-option value="game1" selected="true">Game 1</ion-option>
+        <ion-option value="game2">Game 2</ion-option>
+        <ion-option value="game3">Game 3</ion-option>
+        <ion-option value="game4">Game 4</ion-option>
+        <ion-option value="game5">Game 5</ion-option>
+        <ion-option value="game6">Game 6</ion-option>
+        <ion-option value="game7">Game 7</ion-option>
+      </ion-select>
+    </ion-item>
+
+
+  <button ion-button color="default" full>Confirm</button>
+
+</ion-content>

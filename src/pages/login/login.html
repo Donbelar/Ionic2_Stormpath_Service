@@ -1,0 +1,41 @@
+<ion-header>
+  <ion-navbar side="center">
+    <ion-title>{{title}}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content align="center" padding>
+
+  <div style="margin-top: 50px; margin-bottom: 20px;">
+    <ion-card-content>
+      <img src="../../assets/images/panda.png" alt="" width="70%"/>
+    </ion-card-content>
+  </div>
+
+<form #loginForm="ngForm">
+   <ion-list style="margin-bottom: 25%;">
+    <ion-item>
+      <ion-label floating>Username</ion-label>
+      <ion-input name="username" type="text" required="" [(ngModel)]="loginFormModel.username"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label floating>Password</ion-label>
+      <ion-input name="password" type="password" required="" [(ngModel)]="loginFormModel.password"></ion-input>
+    </ion-item>
+  </ion-list>
+
+    <div *ngIf="error" class="alert alert-danger">{{error}}</div>
+
+  <div style="margin-bottom: 8%;">
+    <button ion-button type="submit" color="light" full (click)="login()"> Log in </button>
+  </div>
+
+</form>
+
+
+  <div style="margin-bottom: 10%">
+    <a href="#" [navPush]="signupPage"> Or create an account </a>
+  </div>
+
+</ion-content>
